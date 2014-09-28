@@ -22,6 +22,18 @@ After that you need to add JSF dependecies in Jetty Plugin as in this [commit](h
 
 # Fist Pages
 
-  1. Configure project and create my first JSF page - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/3b838da3eb0b0b5038b1215ca94f7f5bc1ffd67c)
+* Configure project and create my first JSF page - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/3b838da3eb0b0b5038b1215ca94f7f5bc1ffd67c)
 
-  2. Create my fist ManageBean - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/232d5f90af70aaa7c115ae10f927599c971273eb)
+* Create my fist ManageBean - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/232d5f90af70aaa7c115ae10f927599c971273eb)
+
+# Using [PrimeFaces](http://www.primefaces.org/)
+
+This section we will see how use PrimeFaces component.
+
+## First test
+
+Changing index.xhtml to use PrimeFaces component - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/938211895761902dff7589187e3feb0771c7afd8)
+
+## Changing PrimeFaces [Themes](http://www.primefaces.org/themes)
+
+In this [example](https://github.com/wapmesquita/formacao-jsf/commit/e455efc6c96843a9ffffbd42f39e60b366f0a77b) you can see how to use PrimeFaces theme.
