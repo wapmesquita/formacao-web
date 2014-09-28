@@ -1,6 +1,6 @@
 Example codes in JSF
 
-# Stating Project
+# Starting Project
 
 ## Archetype
 Execute command below to create a maven web project:
@@ -20,7 +20,7 @@ You can find the diff of configuration in this [commit](https://github.com/wapme
 
 After that you need to add JSF dependecies in Jetty Plugin as in this [commit](https://github.com/wapmesquita/formacao-jsf/commit/2464a102726ce53688ffcf4203eb5463cd14b66f)
 
-# Fist Pages
+# First Pages
 
 * Configure project and create my first JSF page - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/3b838da3eb0b0b5038b1215ca94f7f5bc1ffd67c)
 
