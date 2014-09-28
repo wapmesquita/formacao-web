@@ -1,7 +1,4 @@
-formacao-jsf
-============
-
-Repositório para exemplos de projeto jsf
+Example codes in JSF
 
 # Stating Project
 
