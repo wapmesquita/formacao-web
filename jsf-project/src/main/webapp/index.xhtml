@@ -1,12 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
 <h:head>
 	<title>First Page JSF</title>
 </h:head>
 <h:body>
 	<h3>JSF Hello World Example</h3>
 	<h:form>
-		<h:inputText value="#{helloBean.name}"></h:inputText>
-		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
+		<p:inputText value="#{helloBean.name}"></p:inputText>
+		<p:commandButton value="Welcome Me" action="welcome"></p:commandButton>
 	</h:form>
 </h:body>
 </html>
