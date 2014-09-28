@@ -1,6 +1,6 @@
 Example codes in JSF
 
-# Starting Project
+# Starting a project
 
 ## Archetype
 Execute command below to create a maven web project:
