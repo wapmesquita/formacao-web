@@ -1,9 +1,28 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>First Page JSF</title>
 </h:head>
 <h:body bgcolor="white">
 	<h3>JSF Hello World Example - Primeira navegacao</h3>
 	<h4>Welcome #{helloBean.name}</h4>
+
+	<h:form>
+		<p:growl id="messages" showDetail="false"/>
+
+		<h3 style="margin-top: 0">Plain Menu</h3>
+		<p:menu>
+			<p:submenu label="Ajax">
+				<p:menuitem value="Save" icon="ui-icon-disk" />
+				<p:menuitem value="Update"  icon="ui-icon-arrowrefresh-1-w" />
+			</p:submenu>
+			<p:submenu label="Non-Ajax">
+				<p:menuitem value="Delete" icon="ui-icon-close" />
+			</p:submenu>
+			<p:submenu label="Navigations">
+				<p:menuitem value="External" url="http://www.primefaces.org" icon="ui-icon-home" />
+				<p:menuitem value="Internal" outcome="/index" icon="ui-icon-star" />
+			</p:submenu>
+		</p:menu>
+	</h:form>
 </h:body>
 </html>
