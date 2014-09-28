@@ -4,5 +4,9 @@
 </h:head>
 <h:body>
 	<h3>JSF Hello World Example</h3>
+	<h:form>
+		<h:inputText value="#{helloBean.name}"></h:inputText>
+		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
+	</h:form>
 </h:body>
 </html>
