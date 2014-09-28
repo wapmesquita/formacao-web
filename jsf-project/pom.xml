@@ -5,8 +5,12 @@
 	<artifactId>jsf-project</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>jsf-project Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<name>JSF Application project</name>
+	
+	<properties>
+		<jetty.version>9.2.3.v20140905</jetty.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,7 +36,21 @@
 			<version>5.0</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>jsf-project</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/jsf</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
