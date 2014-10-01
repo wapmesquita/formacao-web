@@ -26,4 +26,8 @@ public class HelloBean implements Serializable {
 	public String submit() {
 		return "welcome";
 	}
+	
+	public void test() {
+		System.out.println(pessoa.getName());
+	}
 }
