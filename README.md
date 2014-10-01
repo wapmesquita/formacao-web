@@ -1,39 +1,39 @@
-Example codes in JSF
+Exemplos de código em JSF
 
-# Starting a project
+# Iniciando um projeto
 
 ## Archetype
-Execute command below to create a maven web project:
+Execute o comando abaixo para criar um projeto web:
 
 	mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name} -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
-## Dependencies
-[Mojarra JSF Dependecy](https://javaserverfaces.java.net/download.html)
+## Dependências
+[Dependência do Mojarra JSF](https://javaserverfaces.java.net/download.html)
 
-[PrimeFaces Dependency](http://primefaces.org/downloads)
+[Dependência do PrimeFaces](http://primefaces.org/downloads)
 
 ## Jetty Plugin
 
 [Tutorial Getting Start](http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html)
 
-You can find the diff of configuration in this [commit](https://github.com/wapmesquita/formacao-jsf/commit/ee8f9b09fccfcf85e08b00829d999dbce2720a0b)
+Você pode encontrar como adicionar o plugin do jetty neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/ee8f9b09fccfcf85e08b00829d999dbce2720a0b)
 
-After that you need to add JSF dependecies in Jetty Plugin as in this [commit](https://github.com/wapmesquita/formacao-jsf/commit/2464a102726ce53688ffcf4203eb5463cd14b66f)
+Após adicionar o plugin, é necessário inserir as dependências de JSF para o plugin [commit](https://github.com/wapmesquita/formacao-jsf/commit/2464a102726ce53688ffcf4203eb5463cd14b66f)
 
-# First Pages
+# Primeira paǵina
 
-* Configure project and create my first JSF page - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/3b838da3eb0b0b5038b1215ca94f7f5bc1ffd67c)
+* Configurando o projeto e criando minha primeira página - [Como fazer?](https://github.com/wapmesquita/formacao-jsf/commit/3b838da3eb0b0b5038b1215ca94f7f5bc1ffd67c)
 
-* Create my fist ManageBean - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/232d5f90af70aaa7c115ae10f927599c971273eb)
+* Criando meu primeiro ManageBean - [Como Fazer?](https://github.com/wapmesquita/formacao-jsf/commit/232d5f90af70aaa7c115ae10f927599c971273eb)
 
-# Using [PrimeFaces](http://www.primefaces.org/)
+# Utilizando o [PrimeFaces](http://www.primefaces.org/)
 
-This section we will see how use PrimeFaces component.
+Abixo você poderá encontrar como utilizar os componentes do PrimeFaces em seu projeto.
 
-## First test
+## Primeiro teste
 
-Changing index.xhtml to use PrimeFaces component - [HowTo](https://github.com/wapmesquita/formacao-jsf/commit/938211895761902dff7589187e3feb0771c7afd8)
+Alterando o index.xhtml para utilizar um componente do PrimeFaces - [Como Fazer?](https://github.com/wapmesquita/formacao-jsf/commit/938211895761902dff7589187e3feb0771c7afd8)
 
-## Changing PrimeFaces [Themes](http://www.primefaces.org/themes)
+## Alterando [tema](http://www.primefaces.org/themes) do PrimeFaces
 
-In this [example](https://github.com/wapmesquita/formacao-jsf/commit/e455efc6c96843a9ffffbd42f39e60b366f0a77b) you can see how to use PrimeFaces theme.
+Neste [exemplo](https://github.com/wapmesquita/formacao-jsf/commit/e455efc6c96843a9ffffbd42f39e60b366f0a77b) você pode ver como utilizar um tema do PrimeFaces.
