@@ -7,7 +7,7 @@
 	<h3>JSF Hello World Example</h3>
 	<h:form>
 		<p:inputText value="#{helloBean.pessoa.name}"></p:inputText>
-		<p:commandButton value="Welcome Me" action="welcome"></p:commandButton>
+		<p:commandButton value="Welcome Me" action="#{helloBean.submit}"></p:commandButton>
 	</h:form>
 </h:body>
 </html>

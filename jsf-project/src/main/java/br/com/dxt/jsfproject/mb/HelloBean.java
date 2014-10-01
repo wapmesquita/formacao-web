@@ -23,4 +23,7 @@ public class HelloBean implements Serializable {
 		this.pessoa = pessoa;
 	}
 
+	public String submit() {
+		return "welcome";
+	}
 }
