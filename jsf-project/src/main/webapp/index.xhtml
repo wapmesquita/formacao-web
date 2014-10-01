@@ -1,19 +1,27 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>First Page JSF</title>
 </h:head>
 <h:body>
-	<h3>JSF Hello World Example</h3>
 	<h:form>
+		<ui:insert name="header">
+			<ui:include src="/menu.xhtml" />
+		</ui:insert>
+
+		<h3>JSF Hello World Example</h3>
+
 		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
 
 		<p:inputText value="#{helloBean.pessoa.name}" required="true" id="name" maxlength="10" requiredMessage="Campo de texto nao pode ficar vazio"></p:inputText>
-		<br/>
+		<br />
 		<p:commandButton value="Welcome Me" action="#{helloBean.submit}"></p:commandButton>
-		<br/>
-		<p:commandButton value="Test Me" action="#{helloBean.test}" ></p:commandButton>
-		<br/>
+		<br />
+		<p:commandButton value="Test Me" action="#{helloBean.test}"></p:commandButton>
+		<br />
 	</h:form>
 </h:body>
 </html>
