@@ -56,3 +56,18 @@ Como mostrado neste [exemplo](https://github.com/wapmesquita/formacao-jsf/commit
 ### Ação
 
 Neste [exemplo](https://github.com/wapmesquita/formacao-jsf/commit/c559460f521c10813b633781165ce46516a742a0), utilizamos apenas a informação enviado do *index.xhtml* para o ManageBean e registramos no console.
+
+## Formulários
+
+Este [exemplo](https://github.com/wapmesquita/formacao-jsf/commit/5c65176682dcd1896d483bd3232493ec7b030e9a) mostra alguns tipos de **validações** possíveis de se fazer diretamente nos arquivos *.xhtml*.
+
+# Templates - Facelets
+
+## ui:insert ui:include
+
+Neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/5c65176682dcd1896d483bd3232493ec7b030e9a) você poderá ver como utilizar um arquivo *.xhtml* em vários lugares. Utilizando a tag **ui:insert**.
+
+## ui:insert ui:define
+
+Também é possível fazer com que vários arquivos *.xhtml* utilize somente uma estrura de layout. Este [commit](https://github.com/wapmesquita/formacao-jsf/commit/6b80b79f3b79f3ae33a9490dbc341222f604c7db) mostra como fazer isto.
+
