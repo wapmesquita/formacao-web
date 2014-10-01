@@ -3,25 +3,21 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
-	<title>First Page JSF</title>
-</h:head>
-<h:body>
-	<h:form>
-		<ui:insert name="header">
-			<ui:include src="/menu.xhtml" />
-		</ui:insert>
+<ui:composition template="/main.xhtml">
+	<ui:define name="content">
+			<h3>JSF Hello World Example</h3>
 
-		<h3>JSF Hello World Example</h3>
+			<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
 
-		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
-
-		<p:inputText value="#{helloBean.pessoa.name}" required="true" id="name" maxlength="10" requiredMessage="Campo de texto nao pode ficar vazio"></p:inputText>
-		<br />
-		<p:commandButton value="Welcome Me" action="#{helloBean.submit}"></p:commandButton>
-		<br />
-		<p:commandButton value="Test Me" action="#{helloBean.test}"></p:commandButton>
-		<br />
-	</h:form>
-</h:body>
+			<p:inputText value="#{helloBean.pessoa.name}" required="true"
+				id="name" maxlength="10"
+				requiredMessage="Campo de texto nao pode ficar vazio"></p:inputText>
+			<br />
+			<p:commandButton value="Welcome Me" action="#{helloBean.submit}"></p:commandButton>
+			<br />
+			<p:commandButton value="Test Me" action="#{helloBean.test}"></p:commandButton>
+			<br />
+	</ui:define>
+</ui:composition>
 </html>
