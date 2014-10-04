@@ -1,21 +1,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<title>JSF Application</title>
 </h:head>
 <h:body>
-	<h:form>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/menu.xhtml" />
+		</ui:insert>
+		<p:messages id="messages" showDetail="true" autoUpdate="true"
+			closable="true" />
+	</div>
 
-		<div id="header">
-			<ui:insert name="header">
-				<ui:include src="/menu.xhtml" />
-			</ui:insert>
-		</div>
-
-		<div id="content">
-			<ui:insert name="content"></ui:insert>
-		</div>
-	</h:form>
+	<div id="content">
+		<ui:insert name="content"></ui:insert>
+	</div>
 </h:body>
 </html>

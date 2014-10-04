@@ -5,26 +5,26 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <ui:composition template="/main.xhtml">
 	<ui:define name="content">
-		<h3>JSF Hello World Example - Primeira navegacao</h3>
-		<h4>Welcome #{helloBean.pessoa.name}</h4>
+		<h:form>
+			<h3>JSF Hello World Example - Primeira navegacao</h3>
+			<h4>Welcome #{helloBean.pessoa.name}</h4>
 
-		<p:growl id="messages" showDetail="false" />
-
-		<h3 style="margin-top: 0">Plain Menu</h3>
-		<p:menu>
-			<p:submenu label="Ajax">
-				<p:menuitem value="Save" icon="ui-icon-disk" />
-				<p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
-			</p:submenu>
-			<p:submenu label="Non-Ajax">
-				<p:menuitem value="Delete" icon="ui-icon-close" />
-			</p:submenu>
-			<p:submenu label="Navigations">
-				<p:menuitem value="External" url="http://www.primefaces.org"
-					icon="ui-icon-home" />
-				<p:menuitem value="Internal" outcome="/index" icon="ui-icon-star" />
-			</p:submenu>
-		</p:menu>
+			<h3 style="margin-top: 0">Plain Menu</h3>
+			<p:menu>
+				<p:submenu label="Ajax">
+					<p:menuitem value="Save" icon="ui-icon-disk" />
+					<p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
+				</p:submenu>
+				<p:submenu label="Non-Ajax">
+					<p:menuitem value="Delete" icon="ui-icon-close" />
+				</p:submenu>
+				<p:submenu label="Navigations">
+					<p:menuitem value="External" url="http://www.primefaces.org"
+						icon="ui-icon-home" />
+					<p:menuitem value="Internal" outcome="/index" icon="ui-icon-star" />
+				</p:submenu>
+			</p:menu>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>
