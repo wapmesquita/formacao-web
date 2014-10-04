@@ -48,4 +48,9 @@ public class CategoriaBean implements Serializable {
 	public void salvarEdicao() {
 		CategoriaService.merge(categoriaEdit);
 	}
+
+	public String salvarEdicaoPagina() {
+		salvarEdicao();
+		return "/exemplos/cadastro/categoria";
+	}
 }

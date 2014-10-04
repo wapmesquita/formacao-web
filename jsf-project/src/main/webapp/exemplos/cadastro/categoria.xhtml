@@ -52,11 +52,20 @@
 						immediate="true"
 						update="tabelaCategoria" />
 
-					<p:commandButton value="Editar - Modal"
+					<p:commandButton value="Modal"
 						icon="ui-icon-document"
 						update=":formEdit"
 						immediate="true"
 						onclick="PF('dlgCategoria').show()">
+						<f:setPropertyActionListener value="#{categoria}"
+							target="#{categoriaBean.categoriaEdit}" />
+					</p:commandButton>
+
+					<p:commandButton value="Pagina"
+						icon="ui-icon-document"
+						immediate="true"
+						action="/exemplos/cadastro/editar-categoria"
+						>
 						<f:setPropertyActionListener value="#{categoria}"
 							target="#{categoriaBean.categoriaEdit}" />
 					</p:commandButton>

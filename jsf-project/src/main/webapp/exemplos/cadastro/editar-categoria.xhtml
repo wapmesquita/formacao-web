@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/main.xhtml">
+	<ui:define name="content">
+		<h:form id="formCategoria" prependId="false">
+
+			<h3>Editar Categoria</h3>
+			<hr />
+			<h:outputLabel for="nome" value="Nome:" style="font-weight:bold;" />
+			<p:inputText required="true" id="nome"
+				value="#{categoriaBean.categoriaEdit.nome}"
+				requiredMessage="Campo nome nao pode ser vazio">
+				<f:validateLength minimum="5"></f:validateLength>
+			</p:inputText>
+			<p:commandButton value="Editar" icon="ui-icon-check"
+				action="#{categoriaBean.salvarEdicaoPagina}" />
+			<hr />
+
+			<p:commandButton value="Voltar"
+				action="/exemplos/cadastro/categoria" />
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+</html>
