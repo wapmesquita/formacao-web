@@ -15,7 +15,7 @@ public class CategoriaService {
 		for (int i = 1; i <= 10; i++) {
 			Categoria categoria = new Categoria();
 			categoria.setId(i);
-			categoria.setNome("Categoria " + 1);
+			categoria.setNome("Categoria " + i);
 			repo.add(categoria);
 		}
 	}
@@ -57,5 +57,9 @@ public class CategoriaService {
 			}
 		}
 		return null;
+	}
+
+	public static void remove(Categoria c) {
+		repo.remove(c);
 	}
 }
