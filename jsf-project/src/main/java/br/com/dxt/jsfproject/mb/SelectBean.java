@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ValueChangeEvent;
 
 import br.com.dxt.jsfproject.domain.Categoria;
@@ -21,7 +21,7 @@ public class SelectBean implements Serializable{
 	 */
 	private static final long serialVersionUID = 8135048491106322697L;
 	private Categoria categoria;
-	private static Set<Categoria> selecteds;
+	private Set<Categoria> selecteds;
 
 	public Categoria getCategoria() {
 		return categoria;
