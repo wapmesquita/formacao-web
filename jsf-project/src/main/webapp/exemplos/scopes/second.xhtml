@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/main.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formSelect" prependId="false">
+
+			<p:commandButton value="Voltar" action="/exemplos/scopes/first"></p:commandButton>
+
+			<h3>SessionScope</h3>
+
+			<h:panelGrid columns="2">
+				<h:column>
+					<h:outputLabel value="Id:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{sessionBean.categoria.id}"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="Nome:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{sessionBean.categoria.nome}"></h:outputLabel>
+				</h:column>
+			</h:panelGrid>
+
+			<hr />
+
+			<h4>RequestScope</h4>
+
+			<h:panelGrid columns="2">
+				<h:column>
+					<h:outputLabel value="Id:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{requestBean.categoria.id}"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="Nome:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{requestBean.categoria.nome}"></h:outputLabel>
+				</h:column>
+			</h:panelGrid>
+
+
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+
+</html>
