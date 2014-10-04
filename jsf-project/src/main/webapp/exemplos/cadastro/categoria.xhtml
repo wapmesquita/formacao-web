@@ -6,6 +6,19 @@
 
 <ui:composition template="/main.xhtml">
 	<ui:define name="content">
+		<p:dialog header="Editar Categoria" widgetVar="dlgCategoria"
+			resizable="false" modal="modal" appendToBody="true">
+			<h:form id="formEdit" prependId="false">
+				<h:outputLabel for="nomeEdit" value="Nome:"
+					style="font-weight:bold;" />
+				<p:inputText id="nomeEdit"
+					value="#{categoriaBean.categoriaEdit.nome}"></p:inputText>
+				<p:commandButton value="OK" action="#{categoriaBean.salvarEdicao}"
+					update=":formCategoria">
+					<p:ajax oncomplete="PF('dlgCategoria').hide()"></p:ajax>
+				</p:commandButton>
+			</h:form>
+		</p:dialog>
 
 		<h:form id="formCategoria" prependId="false">
 
@@ -38,6 +51,15 @@
 						icon="ui-icon-trash"
 						immediate="true"
 						update="tabelaCategoria" />
+
+					<p:commandButton value="Editar - Modal"
+						icon="ui-icon-document"
+						update=":formEdit"
+						immediate="true"
+						onclick="PF('dlgCategoria').show()">
+						<f:setPropertyActionListener value="#{categoria}"
+							target="#{categoriaBean.categoriaEdit}" />
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
 		</h:form>

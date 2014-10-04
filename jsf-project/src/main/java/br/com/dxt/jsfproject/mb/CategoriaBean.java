@@ -14,6 +14,15 @@ import br.com.dxt.jsfproject.service.CategoriaService;
 public class CategoriaBean implements Serializable {
 	private static final long serialVersionUID = -973664692718082601L;
 	private Categoria novaCategoria = new Categoria();
+	private Categoria categoriaEdit = new Categoria();
+
+	public Categoria getCategoriaEdit() {
+		return categoriaEdit;
+	}
+
+	public void setCategoriaEdit(Categoria categoriaEdit) {
+		this.categoriaEdit = categoriaEdit;
+	}
 
 	public void adicionar() {
 		CategoriaService.persist(novaCategoria);
@@ -34,5 +43,9 @@ public class CategoriaBean implements Serializable {
 
 	public void remove(Categoria c) {
 		CategoriaService.remove(c);
+	}
+	
+	public void salvarEdicao() {
+		CategoriaService.merge(categoriaEdit);
 	}
 }
