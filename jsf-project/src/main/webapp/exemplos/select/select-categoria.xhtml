@@ -14,13 +14,17 @@
 
 			<h4>CategoriaConverter</h4>
 			
-			<p:selectOneMenu value="#{selectBean.categoria}">
+			<p:selectOneMenu value="#{selectBean.categoria}" valueChangeListener="#{selectBean.onChangeCategoria}">
 				<f:selectItem itemLabel="--- Selecione uma categoria ---" noSelectionOption="true"></f:selectItem>
 				<f:selectItems value="#{selectBean.listCategoria}" var="cat" itemLabel="#{cat.nome}" itemValue="#{cat}"></f:selectItems>
-				<p:ajax update="categoriaSelecionada"></p:ajax>
+				<p:ajax update="@parent"></p:ajax>
 				<f:converter converterId="br.com.dxt.jsfproject.converter.CategoriaConverter"></f:converter>
 			</p:selectOneMenu>
-			
+
+			<p:commandButton value="Add" update="selecionados">
+				<p:collector value="#{selectBean.categoria}" addTo="#{selectBean.selecteds}" unique="true"/>
+			</p:commandButton>
+
 			<h:panelGrid columns="2" id="categoriaSelecionada">
 				<h:column>
 					<h:outputLabel value="Id:"></h:outputLabel>
@@ -36,6 +40,20 @@
 				</h:column>
 			</h:panelGrid>
 			
+			<hr/>
+			
+			<h4>Utilizando p:collector</h4>
+			
+			<p:dataTable value="#{selectBean.selecteds}" var="c" id="selecionados">
+				<p:column headerText="Nome">
+					<h:outputText value="#{c.nome}"></h:outputText>
+				</p:column>
+				<p:column headerText="Acoes">
+					<p:commandButton value="Remove" update="selecionados">
+						<p:collector value="#{c}" removeFrom="#{selectBean.selecteds}" unique="true"/>
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
 		</h:form>
 
 	</ui:define>
