@@ -32,6 +32,13 @@
 				<p:column headerText="Nome">
 					<h:outputText value="#{categoria.nome}" />
 				</p:column>
+				<p:column headerText="Acoes">
+					<p:commandButton value="Excluir"
+						action="#{categoriaBean.remove(categoria)}"
+						icon="ui-icon-trash"
+						immediate="true"
+						update="tabelaCategoria" />
+				</p:column>
 			</p:dataTable>
 		</h:form>
 	</ui:define>

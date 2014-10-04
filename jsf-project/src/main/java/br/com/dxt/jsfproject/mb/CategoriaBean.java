@@ -32,4 +32,7 @@ public class CategoriaBean implements Serializable {
 		this.novaCategoria = novaCategoria;
 	}
 
+	public void remove(Categoria c) {
+		CategoriaService.remove(c);
+	}
 }
