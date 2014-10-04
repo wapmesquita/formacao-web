@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import javax.jms.InvalidClientIDException;
-
 import br.com.dxt.jsfproject.domain.Categoria;
 
 public class CategoriaService {
@@ -26,9 +24,9 @@ public class CategoriaService {
 		return Collections.unmodifiableCollection(repo);
 	}
 
-	public static void persist(Categoria c) throws InvalidClientIDException {
+	public static void persist(Categoria c) {
 		if (c.getId() != null) {
-			throw new InvalidClientIDException(
+			throw new RuntimeException(
 					"Utilize o merge para atualizar a categoria");
 		}
 		if (repo.isEmpty()) {
@@ -39,14 +37,14 @@ public class CategoriaService {
 		repo.add(c);
 	}
 
-	public static void merge(Categoria c) throws InvalidClientIDException {
+	public static void merge(Categoria c) {
 		if (c.getId() == null) {
-			throw new InvalidClientIDException(
+			throw new RuntimeException(
 					"Utilize o persist para inserir a categoria");
 		}
 		Categoria findById = findById(c.getId());
 		if (findById == null) {
-			throw new InvalidClientIDException(
+			throw new RuntimeException(
 					"Categoria nao encontrada para atualizar");
 		}
 		findById.setNome(c.getNome());
