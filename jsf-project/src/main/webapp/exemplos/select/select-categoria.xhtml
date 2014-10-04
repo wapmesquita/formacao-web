@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/main.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formSelect" prependId="false">
+
+			<h3>Utilizando SelectOne Menu</h3>
+			<hr />
+
+			<h4>CategoriaConverter</h4>
+			
+			<p:selectOneMenu value="#{selectBean.categoria}">
+				<f:selectItem itemLabel="--- Selecione uma categoria ---" noSelectionOption="true"></f:selectItem>
+				<f:selectItems value="#{selectBean.listCategoria}" var="cat" itemLabel="#{cat.nome}" itemValue="#{cat}"></f:selectItems>
+				<p:ajax update="categoriaSelecionada"></p:ajax>
+				<f:converter converterId="br.com.dxt.jsfproject.converter.CategoriaConverter"></f:converter>
+			</p:selectOneMenu>
+			
+			<h:panelGrid columns="2" id="categoriaSelecionada">
+				<h:column>
+					<h:outputLabel value="Id:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{selectBean.categoria.id}"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="Nome:"></h:outputLabel>
+				</h:column>
+				<h:column>
+					<h:outputLabel value="#{selectBean.categoria.nome}"></h:outputLabel>
+				</h:column>
+			</h:panelGrid>
+			
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+
+</html>
