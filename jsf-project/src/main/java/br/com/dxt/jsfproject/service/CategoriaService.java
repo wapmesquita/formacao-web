@@ -32,7 +32,7 @@ public class CategoriaService {
 		if (repo.isEmpty()) {
 			c.setId(1);
 		} else {
-			c.setId(repo.get(repo.size() - 1).getId());
+			c.setId(repo.get(repo.size() - 1).getId() + 1);
 		}
 		repo.add(c);
 	}
