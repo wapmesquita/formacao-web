@@ -80,3 +80,11 @@ Agora conseguimos construir nosso primeiro cadastro. Para isto temos que criar n
 ### Remover
 
 Apos conseguir incluir um item em nosso cadastro, podemos contruir a funcionalidade de remover um registro. Para isso, alteramos nosso arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/c1dbd6c238b4677d602b12b67e7b432791291770/jsf-project/src/main/webapp/exemplos/cadastro/categoria.xhtml) e implementamos a funcionalidade em nosso arquivo [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/c1dbd6c238b4677d602b12b67e7b432791291770/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/CategoriaBean.java). As alteracoes podem ser encontradas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/c1dbd6c238b4677d602b12b67e7b432791291770).
+
+### Editar
+
+Para completar nosso cadastro, devemos criar a funcionalidade para editar nosso registro. Esta funcionalidade pode ser feita de duas formas: uma janela modal ou e uma outra pagina.
+
+#### Modal
+
+Para editar nosso registro em uma janela modal, temos que criar um botao e a janela em nosso arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/78c8740863c376626df4e2c494a3119b8a68753e/jsf-project/src/main/webapp/exemplos/cadastro/categoria.xhtml), e tambem, implementar o codigo necessario em nosso [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/78c8740863c376626df4e2c494a3119b8a68753e/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/CategoriaBean.java). Tudo isso pode ser encontrado neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/78c8740863c376626df4e2c494a3119b8a68753e).
