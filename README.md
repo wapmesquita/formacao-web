@@ -76,3 +76,7 @@ Também é possível fazer com que vários arquivos *.xhtml* utilize somente uma
 ### Adicionar
 
 Agora conseguimos construir nosso primeiro cadastro. Para isto temos que criar nossa tela no arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/64d14e67a3886b6c1447b58f5b41d30a8690fd57/jsf-project/src/main/webapp/exemplos/cadastro/categoria.xhtml) e, para gerenciar nossa tela, construimos nosso [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/64d14e67a3886b6c1447b58f5b41d30a8690fd57/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/CategoriaBean.java). As alteracoes para podem ser encontradas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/64d14e67a3886b6c1447b58f5b41d30a8690fd57).
+
+### Remover
+
+Apos conseguir incluir um item em nosso cadastro, podemos contruir a funcionalidade de remover um registro. Para isso, alteramos nosso arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/c1dbd6c238b4677d602b12b67e7b432791291770/jsf-project/src/main/webapp/exemplos/cadastro/categoria.xhtml) e implementamos a funcionalidade em nosso arquivo [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/c1dbd6c238b4677d602b12b67e7b432791291770/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/CategoriaBean.java). As alteracoes podem ser encontradas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/c1dbd6c238b4677d602b12b67e7b432791291770).
