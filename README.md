@@ -71,3 +71,8 @@ Neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/5c65176682dcd1
 
 Também é possível fazer com que vários arquivos *.xhtml* utilize somente uma estrura de layout. Este [commit](https://github.com/wapmesquita/formacao-jsf/commit/6b80b79f3b79f3ae33a9490dbc341222f604c7db) mostra como fazer isto.
 
+# CRUD
+
+### Adicionar
+
+Agora conseguimos construir nosso primeiro cadastro. Para isto temos que criar nossa tela no arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/64d14e67a3886b6c1447b58f5b41d30a8690fd57/jsf-project/src/main/webapp/exemplos/cadastro/categoria.xhtml) e, para gerenciar nossa tela, construimos nosso [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/64d14e67a3886b6c1447b58f5b41d30a8690fd57/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/CategoriaBean.java). As alteracoes para podem ser encontradas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/64d14e67a3886b6c1447b58f5b41d30a8690fd57).
