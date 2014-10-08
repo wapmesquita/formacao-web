@@ -3,8 +3,10 @@ package br.com.dxt.jsfproject.mb;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.dxt.jsfproject.domain.Categoria;
 import br.com.dxt.jsfproject.service.CategoriaService;
@@ -27,6 +29,13 @@ public class CategoriaBean implements Serializable {
 	public void adicionar() {
 		CategoriaService.persist(novaCategoria);
 		novaCategoria = new Categoria();
+		FacesContext.getCurrentInstance()
+		.addMessage(
+				null,
+				new FacesMessage(FacesMessage.SEVERITY_INFO,
+						"Alteração realizada",
+						"Categoria adicionada com sucesso"));
+
 	}
 
 	public Collection<Categoria> getListCategoria() {
@@ -43,10 +52,23 @@ public class CategoriaBean implements Serializable {
 
 	public void remove(Categoria c) {
 		CategoriaService.remove(c);
+		FacesContext.getCurrentInstance()
+		.addMessage(
+				null,
+				new FacesMessage(FacesMessage.SEVERITY_WARN,
+						"Alteração realizada",
+						"Categoria removida com sucesso"));
+
 	}
-	
+
 	public void salvarEdicao() {
 		CategoriaService.merge(categoriaEdit);
+		FacesContext.getCurrentInstance()
+				.addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_INFO,
+								"Alteração realizada",
+								"Categoria editada com sucesso"));
 	}
 
 	public String salvarEdicaoPagina() {
