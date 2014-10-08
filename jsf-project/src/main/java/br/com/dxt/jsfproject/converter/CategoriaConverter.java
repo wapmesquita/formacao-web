@@ -13,7 +13,7 @@ public class CategoriaConverter implements Converter {
 
 	@Override
 	public Object getAsObject(FacesContext facesCtx, UIComponent uiComponent, String idString) {
-		if (idString == null || idString.trim() == "") {
+		if (idString == null || idString.trim().equals("")) {
 			return null;
 		}
 
