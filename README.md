@@ -97,6 +97,26 @@ Para editar nosso registro em uma outra pagina, temos que criar um botao em noss
 
 As vezes temos a necessidade de colocar em nossa view, um combo que lista as entidades de nosso sistema. Por exemplo, uma entidade que possui um Id e um atributo Nome. Para colocar um select deste tipo na tela, continuamos criando nosso arquivo [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/a73f1b0a228b47b74997bdb8c27d1901cece459e/jsf-project/src/main/webapp/exemplos/select/select-categoria.xhtml) e nosso [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/master/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/SelectBean.java). Mas para a esta funcionalidade realmente funcionar, criamos um [Converter](https://github.com/wapmesquita/formacao-jsf/blob/a73f1b0a228b47b74997bdb8c27d1901cece459e/jsf-project/src/main/java/br/com/dxt/jsfproject/converter/CategoriaConverter.java). Estas alteracoes podem ser encontradas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/a73f1b0a228b47b74997bdb8c27d1901cece459e).
 
+# Equals e HashCode
+
+Algumas vezes podemos nos deparara com situações que temos que utilizar diferentes instâncias de um objeto em um mesmo ManageBean.
+
+  **Exemplo**
+  
+  Temos um combo que exibe uma lista resultante de uma consulta ao banco de dados e criamos um converter cujo método *getAsObject* é escrito desta forma:
+
+	@Override
+	public Object getAsObject(FacesContext ctx, 
+			UIComponent component, String idString) {
+		if (idString == null || idString.trim().equals("")) {
+			return null;
+		}
+		long id = Long.parseLong(idString);
+		return new CategoriaService().findById(id);
+	}
+
+  Nesse caso, o objeto que retornamos em nosso método é diferente do objeto em nossa lista utilizada para preencher o combo. Para que nosso código funcione, precisamos implementar os métodos **equals e hashcode** em nossa classe de domínio, nesse caso, *Categoria.java*. Veja como foi implementado neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/8692f2384543d6bda7879db7b538752fbadbd958).
+
 # ValueChangeListener
 
 Agora veremos um exemplo de como disparar um evento apos alterar o valor de um campo. Para isso criamos o metodo em nosso [ManageBean](https://github.com/wapmesquita/formacao-jsf/blob/e5f045bf09a68fdc84148a3000521907d6d96e54/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/SelectBean.java) e linkamos este metodo com o campo em nosso [.xhtml](https://github.com/wapmesquita/formacao-jsf/blob/e5f045bf09a68fdc84148a3000521907d6d96e54/jsf-project/src/main/webapp/exemplos/select/select-categoria.xhtml). As alteracoes podem ser visualizadas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/e5f045bf09a68fdc84148a3000521907d6d96e54).
