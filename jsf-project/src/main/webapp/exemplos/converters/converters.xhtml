@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/main.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formConverter" prependId="false">
+
+			<h3>Converters Nativos</h3>
+			<hr />
+
+			<p:panelGrid columns="3">
+				<p:column>
+					<p:outputLabel value="Numero"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:inputText value="#{converterBean.numero}">
+						<f:converter converterId="javax.faces.Integer"></f:converter>
+					</p:inputText>
+				</p:column>
+				<p:column>
+					<p:outputLabel value="#{converterBean.numero}">
+					</p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<p:outputLabel value="Data"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:calendar value="#{converterBean.data}" showOn="button" />
+				</p:column>
+				<p:column>
+					<p:outputLabel value="#{converterBean.data}">
+						<f:convertDateTime dateStyle="long" locale="pt_BR"></f:convertDateTime>
+					</p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<p:outputLabel value="Monetario"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:inputText value="#{converterBean.monetario}">
+						<f:convertNumber minFractionDigits="2" maxFractionDigits="2" locale="pt_BR" minIntegerDigits="4"></f:convertNumber>
+					</p:inputText>
+				</p:column>
+				<p:column>
+					<p:outputLabel value="#{converterBean.monetario}">
+						<f:convertNumber minFractionDigits="2" maxFractionDigits="2" minIntegerDigits="4"></f:convertNumber>
+					</p:outputLabel>
+				</p:column>
+				<p:column colspan="3">
+					<p:commandLink value="Testar" update=":formConverter"></p:commandLink>
+				</p:column>
+			</p:panelGrid>
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+
+</html>
