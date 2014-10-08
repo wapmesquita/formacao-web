@@ -126,3 +126,9 @@ Agora veremos um exemplo de como disparar um evento apos alterar o valor de um c
 
 Em JSF podemos trabalhar com os ManageBeans em alguns tipos de escopos direfentes. Agora veremos as diferencas entre escopos dos tipos Session e Request.
 Para ver essa diferenca temos que criar um ManageBean para cada tipo de escopo - [Session](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/SessionBean.java) e [Request](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/RequestBean.java) - e criamos dois arquivos *.xhtml* para visualizar o comportamento - [Primeiro para inserir os dados](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/webapp/exemplos/scopes/first.xhtml) e o [Segundo para visualizar os dados](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/webapp/exemplos/scopes/second.xhtml). Todas as alteracoes podem ser visualizadas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/eb06cf3e8a769512d63a6372641872a9538952f7).
+
+# Serializable
+
+**Quando implementar a interface Serializable?**
+
+Em JSF, todo objeto de sessão fica salvo em sua SessionScope. Basicamente, todo atributo utilizado em sessão deveria implementar esta interface. Esta implementação permite que o servidor onde está sua aplicação possa ser reiniciado e seus objetos de sessão restaurados.
