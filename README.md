@@ -134,6 +134,9 @@ Para ver essa diferenca temos que criar um ManageBean para cada tipo de escopo -
 
 É possível informar ao usuário que uma ação executada ocorreu com sucesso, ou teve algum problema. Podemos utilizar o **FacesMessage**. Essas mensagens poderão ser visualizadas no componente p:messages. É possível visualizar como inserir mensagens no FacesContext neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/b4a265c32fb1995fdb8c55142d8714800e56c128).
 
+# Validador Personalizado
+
+Tem algumas páginas que não é possível validar os dados apenas com os validadores nativo do JSF como; *f:validateLength, validateLongRange, validateRegex, entre outros*. Neste caso, é necessário criar nosso próprio validador. Este [commit](https://github.com/wapmesquita/formacao-jsf/commit/129b78d1d5c408a4a294bf715e827c287c6f82d0) mostra como criar um EmailValidator.
 
 # Serializable
 
