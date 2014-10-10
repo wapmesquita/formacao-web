@@ -7,6 +7,7 @@
 	<ui:define name="content">
 		<h:form>
 			<h3>JSF Hello World Example</h3>
+			<h4><h:outputText value="#{msg['key.welcome']}"></h:outputText></h4>
 
 			<p:inputText value="#{helloBean.pessoa.name}" required="true"
 				id="name" maxlength="10"

@@ -7,7 +7,7 @@
 	<title>JSF Application</title>
 </h:head>
 <h:body>
-	<f:phaseListener type="br.com.dxt.jsfproject.mb.LoginBean"></f:phaseListener>
+	<f:view>
 	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/menu.xhtml" />
@@ -28,6 +28,6 @@
 		closable="false" resizable="false" showHeader="false">
 		<h:outputText value="Status: Loading" />
 	</p:dialog>
-
+	</f:view>
 </h:body>
 </html>
