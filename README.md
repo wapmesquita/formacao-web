@@ -143,3 +143,8 @@ Tem algumas páginas que não é possível validar os dados apenas com os valida
 **Quando implementar a interface Serializable?**
 
 Em JSF, todo objeto de sessão fica salvo em sua SessionScope. Basicamente, todo atributo utilizado em sessão deveria implementar esta interface. Esta implementação permite que o servidor onde está sua aplicação possa ser reiniciado e seus objetos de sessão restaurados.
+
+# PhaseListener
+
+Agora implementaremos um exemplo de PhaseListener para simular um login na aplicacao. Para este exemplos temos os Beans [UserBean](https://github.com/wapmesquita/formacao-jsf/blob/353fb4e3fcbe1e7f8c98416bf3c0958c5c3f7f5c/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/UserBean.java) e [LoginBean](https://github.com/wapmesquita/formacao-jsf/blob/353fb4e3fcbe1e7f8c98416bf3c0958c5c3f7f5c/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/LoginBean.java) onde tambem e implementado o nosso PhaseListener.
+Tambem devemos configurar nosso [faces-config.xml](https://github.com/wapmesquita/formacao-jsf/blob/353fb4e3fcbe1e7f8c98416bf3c0958c5c3f7f5c/jsf-project/src/main/webapp/WEB-INF/faces-config.xml) e entao construir nossa pagina de [login](https://github.com/wapmesquita/formacao-jsf/blob/353fb4e3fcbe1e7f8c98416bf3c0958c5c3f7f5c/jsf-project/src/main/webapp/login.xhtml). Pronto! Nosso PhaseListener esta implementado. Todas as alteracoes podem ser visualizadas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/353fb4e3fcbe1e7f8c98416bf3c0958c5c3f7f5c).
