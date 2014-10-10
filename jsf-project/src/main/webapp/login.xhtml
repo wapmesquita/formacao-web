@@ -4,21 +4,20 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	<title>JSF Application</title>
+	<title>Login</title>
 </h:head>
 <h:body>
-	<f:phaseListener type="br.com.dxt.jsfproject.mb.LoginBean"></f:phaseListener>
 	<div id="header">
-		<ui:insert name="header">
-			<ui:include src="/menu.xhtml" />
-		</ui:insert>
+
 		<p:messages id="messages" showDetail="true" autoUpdate="true"
 			closable="true" />
-			<h:outputText value="Ola #{userBean.usuario}"></h:outputText>
 	</div>
 
 	<div id="content">
-		<ui:insert name="content"></ui:insert>
+		<h:form>
+			<p:inputText value="#{loginBean.user}"></p:inputText>
+			<p:commandButton action="#{loginBean.login}" value="Login"></p:commandButton>
+		</h:form>
 	</div>
 
 	<p:ajaxStatus onstart="PF('statusDialog').show()"
