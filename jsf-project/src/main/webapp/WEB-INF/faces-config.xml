@@ -16,6 +16,11 @@
 			<base-name>i18n.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
+		<message-bundle>
+			i18n.messages
+		</message-bundle>
 	</application>
+
+
 </faces-config>
 

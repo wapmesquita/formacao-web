@@ -15,7 +15,9 @@
 
 	<div id="content">
 		<h:form>
-			<p:inputText value="#{loginBean.user}"></p:inputText>
+			<p:inputText value="#{loginBean.user}">
+				<f:validateLength minimum="5"></f:validateLength>
+			</p:inputText>
 			<p:commandButton action="#{loginBean.login}" value="Login"></p:commandButton>
 		</h:form>
 	</div>
