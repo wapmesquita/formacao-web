@@ -130,6 +130,14 @@ Agora veremos um exemplo de como disparar um evento apos alterar o valor de um c
 Em JSF podemos trabalhar com os ManageBeans em alguns tipos de escopos direfentes. Agora veremos as diferencas entre escopos dos tipos Session e Request.
 Para ver essa diferenca temos que criar um ManageBean para cada tipo de escopo - [Session](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/SessionBean.java) e [Request](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/java/br/com/dxt/jsfproject/mb/RequestBean.java) - e criamos dois arquivos *.xhtml* para visualizar o comportamento - [Primeiro para inserir os dados](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/webapp/exemplos/scopes/first.xhtml) e o [Segundo para visualizar os dados](https://github.com/wapmesquita/formacao-jsf/blob/eb06cf3e8a769512d63a6372641872a9538952f7/jsf-project/src/main/webapp/exemplos/scopes/second.xhtml). Todas as alteracoes podem ser visualizadas neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/eb06cf3e8a769512d63a6372641872a9538952f7).
 
+# Informando o sucesso (Mensagens de sucesso)
+
+É possível informar ao usuário que uma ação executada ocorreu com sucesso, ou teve algum problema. Podemos utilizar o **FacesMessage**. Essas mensagens poderão ser visualizadas no componente p:messages. É possível visualizar como inserir mensagens no FacesContext neste [commit](https://github.com/wapmesquita/formacao-jsf/commit/b4a265c32fb1995fdb8c55142d8714800e56c128).
+
+# Validador Personalizado
+
+Tem algumas páginas que não é possível validar os dados apenas com os validadores nativo do JSF como; *f:validateLength, validateLongRange, validateRegex, entre outros*. Neste caso, é necessário criar nosso próprio validador. Este [commit](https://github.com/wapmesquita/formacao-jsf/commit/129b78d1d5c408a4a294bf715e827c287c6f82d0) mostra como criar um EmailValidator.
+
 # Serializable
 
 **Quando implementar a interface Serializable?**
