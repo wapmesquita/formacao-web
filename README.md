@@ -2,17 +2,51 @@ Exemplos de código em JSF
 
 # Iniciando um projeto
 
-## Archetype
+## Utilizando o Tomcat
+
+Você pode encontrar abaixo como configurar o eclipse com o plugin do tomcat para rodar sua aplicação JSF.
+
+###Downloads
+
+O primeiro passo para utilizar o tomcat é fazer o [donwload](http://tomcat.apache.org/download-80.cgi). Após realizar o download descompacte em uma pasta que iremos chamar de *[APACHE_HOME]*.
+
+Será necessário fazer o download da biblioteca do [JSF (Mojarra)](https://javaserverfaces.java.net/nonav/2.2/download.html) - * API e IMPL* - e também a [biblioteca do PrimeFaces](http://primefaces.org/downloads).
+
+### Configurando o eclipse
+
+**1.** Crie um projeto *Dynamic Web Project*;
+
+**2.** Na opção *Target runtime* escolha o Tomcat que foi realizado o download e configure um novo servidor, selecionando a pasta *[APACHE_HOME]*;
+
+**3.** Em configuration, clique em Modify e escolha a de JSF 2.2
+
+**4.** Next duas vezes
+
+**5.** Clique em "Generate web.xml ..."
+
+**6.** Em *JSF Implementation Library* escolha a opção *Disable...*
+
+**7.** Adicione o *URL Mapping Patterns* ***.xhtml**;
+
+**8.** Finish
+
+**9.** Com o projeto criado, podemos copias os arquivos .jar que fizemos download para dentro da pasta *WebContent/WEB-INF/lib*
+
+## Utilizando Maven
+
+Você pode encontrar abaixo como configurar o maven com o plugin do jetty para rodar sua aplicação JSF.
+
+### Archetype
 Execute o comando abaixo para criar um projeto web:
 
 	mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name} -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
-## Dependências
+### Dependências
 [Dependência do Mojarra JSF](https://javaserverfaces.java.net/download.html)
 
 [Dependência do PrimeFaces](http://primefaces.org/downloads)
 
-## Jetty Plugin
+### Jetty Plugin
 
 [Tutorial Getting Start](http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html)
 
