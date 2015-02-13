@@ -12,6 +12,7 @@
 	<modules>
 		<module>model</module>
 		<module>jsf-project</module>
+		<module>service</module>
 	</modules>
 
 </project>
