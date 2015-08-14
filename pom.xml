@@ -8,11 +8,17 @@
 	<artifactId>jsf-parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+
+
+	<properties>
+		<jetty.version>9.0.5.v20130815</jetty.version>
+	</properties>
 	
 	<modules>
 		<module>model</module>
 		<module>jsf-project</module>
 		<module>service</module>
+		<module>rest</module>
 	</modules>
 
 </project>

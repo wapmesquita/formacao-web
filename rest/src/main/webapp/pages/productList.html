@@ -1,0 +1,9 @@
+<ul class="product">
+	{{~it.products : product}}
+		<li data-id="{{= product.codigo}}" data-nome="{{= product.nome}}" >
+			<div>Código: {{= product.codigo}}</div>
+			<div>Nome: {{= product.nome}}</div>
+			<button class="button-add-to-cart btn">Adicionar ao carrinho</button>
+		</li>
+	{{~}}
+</ul>
