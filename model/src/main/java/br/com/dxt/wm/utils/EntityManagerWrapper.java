@@ -32,6 +32,6 @@ public class EntityManagerWrapper {
 	}
 	
 	public static void commit() {
-		getEntityManager().getTransaction().begin();
+		getEntityManager().getTransaction().commit();
 	}
 }

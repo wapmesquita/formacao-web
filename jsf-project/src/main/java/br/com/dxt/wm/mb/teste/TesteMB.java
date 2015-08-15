@@ -33,6 +33,7 @@ public class TesteMB implements Serializable {
 	public void salvar() {
 		produtoService.salvar(produto);
 		produto = new Produto();
+		produtos = null;
 	}
 	
 	private Collection<Produto> produtos;

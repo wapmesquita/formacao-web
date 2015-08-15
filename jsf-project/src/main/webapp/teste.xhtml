@@ -12,22 +12,22 @@
 
 	<h:form id="form">
 		<p:outputLabel value="Nome:"></p:outputLabel>
-		<p:inputText id="txtNome" value="#{testeMB.pessoa.nome}"></p:inputText>
+		<p:inputText id="txtNome" value="#{testeMB.produto.nome}"></p:inputText>
 
 		<br />
 		<br />
 
-		<p:commandButton value="Salvar" update=":form:txtNome,:tablePessoas"
+		<p:commandButton value="Salvar" update=":form:txtNome,:tableProdutos"
 			action="#{testeMB.salvar}"></p:commandButton>
 	</h:form>
 
-	<p:dataTable id="tablePessoas" var="pessoa" value="#{testeMB.pessoas}">
+	<p:dataTable id="tableProdutos" var="produto" value="#{testeMB.produtos}">
 		<p:column headerText="Id">
-			<h:outputText value="#{pessoa.id}" />
+			<h:outputText value="#{produto.id}" />
 		</p:column>
 
 		<p:column headerText="Nome">
-			<h:outputText value="#{pessoa.nome}" />
+			<h:outputText value="#{produto.nome}" />
 		</p:column>
 
 	</p:dataTable>
