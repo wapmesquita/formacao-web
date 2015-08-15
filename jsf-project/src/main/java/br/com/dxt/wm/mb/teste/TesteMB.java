@@ -1,5 +1,6 @@
 package br.com.dxt.wm.mb.teste;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -11,8 +12,13 @@ import br.com.dxt.wm.service.PessoaService;
 
 @SessionScoped
 @ManagedBean
-public class TesteMB {
+public class TesteMB implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7308504304687338654L;
+
 	private PessoaService pessoaService = new PessoaService();
 	
 	private Pessoa pessoa = new Pessoa();
