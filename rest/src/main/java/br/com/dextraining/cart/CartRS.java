@@ -1,7 +1,6 @@
 package br.com.dextraining.cart;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -13,9 +12,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.google.gson.Gson;
-
 import br.com.dextraining.product.Product;
+
+import com.google.gson.Gson;
 
 @Path("/cart")
 public class CartRS {

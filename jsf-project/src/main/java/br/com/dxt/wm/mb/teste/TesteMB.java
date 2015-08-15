@@ -2,13 +2,12 @@ package br.com.dxt.wm.mb.teste;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import br.com.dxt.wm.entity.Pessoa;
-import br.com.dxt.wm.service.PessoaService;
+import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.service.ProdutoService;
 
 @SessionScoped
 @ManagedBean
@@ -19,30 +18,30 @@ public class TesteMB implements Serializable {
 	 */
 	private static final long serialVersionUID = 7308504304687338654L;
 
-	private PessoaService pessoaService = new PessoaService();
+	private ProdutoService produtoService = new ProdutoService();
 	
-	private Pessoa pessoa = new Pessoa();
+	private Produto produto = new Produto();
 	
-	public Pessoa getPessoa() {
-		return pessoa;
+	public Produto getProduto() {
+		return produto;
 	}
 	
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 	
 	public void salvar() {
-		pessoaService.salvar(pessoa);
-		pessoa = new Pessoa();
+		produtoService.salvar(produto);
+		produto = new Produto();
 	}
 	
-	private Collection<Pessoa> pessoas;
+	private Collection<Produto> produtos;
 	
-	public Collection<Pessoa> getPessoas() {
-		if (pessoas == null) {
-			pessoas = pessoaService.buscarTodos();
+	public Collection<Produto> getProdutos() {
+		if (produtos == null) {
+			produtos = produtoService.buscarTodos();
 		}
-		return pessoas;
+		return produtos;
 	}
 
 }

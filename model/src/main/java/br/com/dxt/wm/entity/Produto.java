@@ -3,7 +3,7 @@ package br.com.dxt.wm.entity;
 import javax.persistence.Entity;
 
 @Entity
-public class Pessoa extends AbstractEntity {
+public class Produto extends AbstractEntity {
 
 	private String nome;
 

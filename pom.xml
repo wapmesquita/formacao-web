@@ -5,7 +5,7 @@
 
 	<name>Parent </name>
 	<groupId>br.com.dxt.wm</groupId>
-	<artifactId>jsf-parent</artifactId>
+	<artifactId>java-ee-parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -20,5 +20,24 @@
 		<module>service</module>
 		<module>rest</module>
 	</modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

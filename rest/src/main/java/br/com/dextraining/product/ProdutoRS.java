@@ -13,8 +13,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.jboss.resteasy.annotations.Form;
-
 import com.google.gson.Gson;
 
 @Path("/product")

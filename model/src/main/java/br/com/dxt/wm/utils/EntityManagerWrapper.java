@@ -26,4 +26,12 @@ public class EntityManagerWrapper {
 			em = null;
 		}
 	}
+	
+	public static void begin() {
+		getEntityManager().getTransaction().begin();
+	}
+	
+	public static void commit() {
+		getEntityManager().getTransaction().begin();
+	}
 }
