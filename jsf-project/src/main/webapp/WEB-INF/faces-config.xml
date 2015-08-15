@@ -3,23 +3,6 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
 
-	<lifecycle>
-		<phase-listener>br.com.dxt.jsfproject.mb.LoginBean</phase-listener>
-	</lifecycle>
-
-	<application>
-		<locale-config>
-			<default-locale>en</default-locale>
-			<supported-locale>pt_BR</supported-locale>
-		</locale-config>
-		<resource-bundle>
-			<base-name>i18n.messages</base-name>
-			<var>msg</var>
-		</resource-bundle>
-		<message-bundle>
-			i18n.messages
-		</message-bundle>
-	</application>
 
 
 </faces-config>
