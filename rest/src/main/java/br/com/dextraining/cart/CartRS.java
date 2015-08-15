@@ -19,8 +19,6 @@ import br.com.dextraining.product.Product;
 
 @Path("/cart")
 public class CartRS {
-	
-	private static Cart cart;
 
 
 	@GET
@@ -85,6 +83,8 @@ public class CartRS {
 		return Response.status(Response.Status.NOT_FOUND).build();
 		
 	}
+	
+	private static Cart cart;
 	
 	private Cart createMockCart() {
 		if (cart == null) {

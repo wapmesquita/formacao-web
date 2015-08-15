@@ -1,0 +1,26 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<TITLE>Testando aplicacao</TITLE>
+</h:head>
+
+<h:body>
+	<h1>Testando requisicao jsf</h1>
+	
+	<h:form>
+		<p:outputLabel value="Nome:"></p:outputLabel>
+		<p:inputText value="#{testeMB.pessoa.nome}"></p:inputText>
+		
+		<br/><br/>
+		
+		<p:commandButton value="Salvar"
+			action="#{testeMB.salvar}"></p:commandButton>
+	</h:form>
+	
+</h:body>
+
+</html>
