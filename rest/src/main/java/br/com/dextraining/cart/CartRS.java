@@ -19,6 +19,9 @@ import br.com.dextraining.product.Product;
 
 @Path("/cart")
 public class CartRS {
+	
+	private static Cart cart;
+
 
 	@GET
 	@Path("/")
@@ -63,7 +66,7 @@ public class CartRS {
 	}
 	
 	@DELETE
-	@Path("/{id}")
+	@Path("/{cartid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response removeFromCart(@PathParam("id") Long codigo) {
 		Cart cart = createMockCart();
@@ -84,13 +87,10 @@ public class CartRS {
 	}
 	
 	private Cart createMockCart() {
-		Cart cart = new Cart();
-		List<Product> products = new ArrayList<>();
-		products.add(new Product(1L, "Produto 1"));
-		products.add(new Product(2L, "Produto 2"));
-		products.add(new Product(3L, "Produto 3"));
-		
-		cart.setProducts(products);
+		if (cart == null) {
+			cart = new Cart();
+			cart.setProducts(new ArrayList<Product>());
+		}
 		return cart;
 	}
 	
