@@ -1,5 +1,4 @@
-<html
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
@@ -10,17 +9,29 @@
 
 <h:body>
 	<h1>Testando requisicao jsf</h1>
-	
-	<h:form>
+
+	<h:form id="form">
 		<p:outputLabel value="Nome:"></p:outputLabel>
-		<p:inputText value="#{testeMB.pessoa.nome}"></p:inputText>
-		
-		<br/><br/>
-		
-		<p:commandButton value="Salvar"
+		<p:inputText id="txtNome" value="#{testeMB.pessoa.nome}"></p:inputText>
+
+		<br />
+		<br />
+
+		<p:commandButton value="Salvar" update=":form:txtNome,:tablePessoas"
 			action="#{testeMB.salvar}"></p:commandButton>
 	</h:form>
-	
+
+	<p:dataTable id="tablePessoas" var="pessoa" value="#{testeMB.pessoas}">
+		<p:column headerText="Id">
+			<h:outputText value="#{pessoa.id}" />
+		</p:column>
+
+		<p:column headerText="Nome">
+			<h:outputText value="#{pessoa.nome}" />
+		</p:column>
+
+	</p:dataTable>
+
 </h:body>
 
 </html>

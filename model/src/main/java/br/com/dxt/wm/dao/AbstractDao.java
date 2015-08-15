@@ -3,6 +3,7 @@ package br.com.dxt.wm.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import br.com.dxt.wm.entity.AbstractEntity;
 import br.com.dxt.wm.utils.EntityManagerWrapper;
@@ -28,15 +29,18 @@ public class AbstractDao<T extends AbstractEntity> {
 	}
 	
 	public List<T> findAll() {
-		return null;
+		String jpql = "FROM %s t";
+		jpql = String.format(jpql, clazz.getSimpleName());
+		TypedQuery<T> qry = getEM().createQuery(jpql, clazz);
+		return qry.getResultList();
 	}
 	
-	public T findById() {
-		return null;
+	public T findById(Object id) {
+		return getEM().find(clazz, id);
 	}
 	
-	public void delete() {
-		
+	public void delete(T t) {
+		getEM().remove(t);
 	}
 
 }
