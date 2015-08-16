@@ -6,6 +6,11 @@
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
 
 	<display-name>Dextraining</display-name>
+
+	<!-- Welcome page -->
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
 	
 	<context-param>
 		<param-name>resteasy.servlet.mapping.prefix</param-name>

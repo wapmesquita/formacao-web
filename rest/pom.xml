@@ -36,10 +36,15 @@
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>java-ee-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
+		<finalName>rest-project</finalName>
 		<plugins>
-
 			<plugin>
 				<dependencies>
 					<dependency>

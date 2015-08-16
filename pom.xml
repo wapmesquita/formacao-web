@@ -26,16 +26,46 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
                 <configuration>
-                    <skip>true</skip>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <contextHandlers>
+                      <contextHandler implementation="org.eclipse.jetty.maven.plugin.JettyWebAppContext">
+                        <war>${project.basedir}/jsf-project/target/jsf-project.war</war>
+                        <contextPath>/jsf</contextPath>
+                      </contextHandler>
+                      <contextHandler implementation="org.eclipse.jetty.maven.plugin.JettyWebAppContext">
+                        <war>${project.basedir}/rest/target/rest-project.war</war>
+                        <contextPath>/</contextPath>
+                      </contextHandler>
+                    </contextHandlers>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.gson</groupId>
+                        <artifactId>gson</artifactId>
+                        <version>2.3.1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.sun.faces</groupId>
+                        <artifactId>jsf-api</artifactId>
+                        <version>2.2.8-02</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.sun.faces</groupId>
+                        <artifactId>jsf-impl</artifactId>
+                        <version>2.2.8-02</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
