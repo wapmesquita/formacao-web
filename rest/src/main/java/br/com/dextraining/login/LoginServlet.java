@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 		String senha = req.getParameter("password");
 		if(login.equals("admin") && senha.equals("123")) {
 			req.getSession().setAttribute(LOGGED_USER, login);
-			resp.sendRedirect("/logged");
+			resp.sendRedirect("./logged/index.html");
 		} else
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
 	}

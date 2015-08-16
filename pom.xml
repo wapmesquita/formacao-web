@@ -45,7 +45,7 @@
                       </contextHandler>
                       <contextHandler implementation="org.eclipse.jetty.maven.plugin.JettyWebAppContext">
                         <war>${project.basedir}/rest/target/rest-project.war</war>
-                        <contextPath>/</contextPath>
+                        <contextPath>/rest</contextPath>
                       </contextHandler>
                     </contextHandlers>
                 </configuration>

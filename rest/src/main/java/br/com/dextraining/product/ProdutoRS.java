@@ -1,7 +1,6 @@
 package br.com.dextraining.product;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -13,19 +12,21 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.service.ProdutoService;
+
 import com.google.gson.Gson;
 
 @Path("/product")
 public class ProdutoRS {
+	
+	private ProdutoService produtoService = new ProdutoService();
 
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAllProduct() {
-		List<Product> products = new ArrayList<>();
-		products.add(new Product(1L, "Produto 1"));
-		products.add(new Product(2L, "Produto 2"));
-		products.add(new Product(3L, "Produto 3"));
+		Collection<Produto> products = produtoService.buscarTodos();
 
 		String json = new Gson().toJson(products);
 
@@ -34,22 +35,12 @@ public class ProdutoRS {
 	}
 
 	@GET
-	@Path("/{id}")
+	@Path("/{codigo}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getProductById(@PathParam("id") Long id) {
-		List<Product> products = new ArrayList<>();
-		products.add(new Product(1L, "Produto 1"));
-		products.add(new Product(2L, "Produto 2"));
-		products.add(new Product(3L, "Produto 3"));
-		System.out.println(id);
-		Product product = null;
-		for(Product prod : products) {
-			if(prod.getCodigo().equals(id)){
-				product = prod;
-			}
-		}
+	public Response getProductByCodigo(@PathParam("codigo") String codigo) {
+		Produto product = produtoService.buscarPorCodigo(codigo);
+		
 		if(product != null) {
-			System.out.println(product);
 			String json = new Gson().toJson(product);
 			return Response.ok(json).build();
 		}
@@ -60,17 +51,8 @@ public class ProdutoRS {
 	@Path("/query")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getProductByName(@QueryParam("nome") String nome) {
-		List<Product> products = new ArrayList<>();
-		products.add(new Product(1L, "produto1"));
-		products.add(new Product(2L, "produto2"));
-		products.add(new Product(3L, "produto3"));
-		System.out.println(nome);
-		Product product = null;
-		for(Product prod : products) {
-			if(prod.getNome().equals(nome)){
-				product = prod;
-			}
-		}
+		Produto product = produtoService.buscarPorNome(nome);
+		
 		if(product != null) {
 			System.out.println(product);
 			String json = new Gson().toJson(product);
@@ -83,9 +65,10 @@ public class ProdutoRS {
 	@POST
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response createProduct(@FormParam("codigo")Long codigo,
+	public Response createProduct(@FormParam("codigo")String codigo,
 			@FormParam("nome") String nome) {
-		Product product = new Product(codigo, nome);
+		Produto product = new Produto(codigo, nome);
+		produtoService.salvar(product);
 		String json = new Gson().toJson(product);
 		return Response.ok(json).build();
 	}

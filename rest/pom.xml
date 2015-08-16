@@ -59,14 +59,8 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/</contextPath>
+						<contextPath>/rest</contextPath>
 					</webApp>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8989</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
 				</configuration>
 			</plugin>
 

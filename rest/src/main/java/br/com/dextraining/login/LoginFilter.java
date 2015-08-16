@@ -26,7 +26,7 @@ public class LoginFilter implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) arg1;
 		Object loginObj = req.getSession().getAttribute(LoginServlet.LOGGED_USER);
 		if(loginObj == null)
-			resp.sendRedirect("/login.html");
+			resp.sendRedirect("./login.html");
 		else
 			chain.doFilter(arg0, arg1);
 	}

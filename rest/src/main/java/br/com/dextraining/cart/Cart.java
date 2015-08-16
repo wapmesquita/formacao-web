@@ -1,20 +1,24 @@
 package br.com.dextraining.cart;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
-import br.com.dextraining.product.Product;
-
+import br.com.dxt.wm.entity.Produto;
 
 public class Cart {
+
+	private Map<Long, Produto> mapProducts = new HashMap<Long, Produto>();
+
+	public Collection<Produto> getProducts() {
+		return mapProducts.values();
+	}
+
+	public void add(Produto produto) {
+		mapProducts.put(produto.getId(), produto);
+	}
 	
-	private List<Product> products;
-
-	public List<Product> getProducts() {
-		return products;
+	public void remove(Produto p) {
+		mapProducts.remove(p.getId());
 	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
 }
