@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.model.entity.Produto;
 import br.com.dxt.wm.service.ProdutoService;
 
 import com.google.gson.Gson;

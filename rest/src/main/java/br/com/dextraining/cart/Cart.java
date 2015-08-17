@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.model.entity.Produto;
 
 public class Cart {
 

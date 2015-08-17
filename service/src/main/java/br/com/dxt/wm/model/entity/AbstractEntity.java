@@ -1,4 +1,4 @@
-package br.com.dxt.wm.entity;
+package br.com.dxt.wm.model.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -1,8 +1,8 @@
-package br.com.dxt.wm.dao;
+package br.com.dxt.wm.model.dao;
 
 import javax.persistence.TypedQuery;
 
-import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.model.entity.Produto;
 
 public class ProdutoDao extends AbstractDao<Produto> {
 

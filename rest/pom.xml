@@ -14,6 +14,10 @@
 		<relativePath>../</relativePath>
 	</parent>
 
+	<properties>
+		<jetty.version>9.0.5.v20130815</jetty.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
@@ -40,6 +44,7 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>java-ee-service</artifactId>
 			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>

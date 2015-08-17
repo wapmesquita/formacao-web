@@ -1,11 +1,11 @@
-package br.com.dxt.wm.dao;
+package br.com.dxt.wm.model.dao;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import br.com.dxt.wm.entity.AbstractEntity;
+import br.com.dxt.wm.model.entity.AbstractEntity;
 import br.com.dxt.wm.utils.EntityManagerWrapper;
 
 public class AbstractDao<T extends AbstractEntity> {

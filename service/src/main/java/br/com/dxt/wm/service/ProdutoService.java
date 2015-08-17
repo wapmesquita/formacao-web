@@ -4,8 +4,8 @@ import java.util.Collection;
 
 import org.apache.commons.lang.IllegalClassException;
 
-import br.com.dxt.wm.dao.ProdutoDao;
-import br.com.dxt.wm.entity.Produto;
+import br.com.dxt.wm.model.dao.ProdutoDao;
+import br.com.dxt.wm.model.entity.Produto;
 import br.com.dxt.wm.utils.EntityManagerWrapper;
 
 public class ProdutoService {
