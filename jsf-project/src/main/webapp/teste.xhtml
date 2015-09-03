@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<TITLE>Testando aplicacao</TITLE>
+</h:head>
+
+<h:body>
+	<h1>Testando requisicao jsf</h1>
+
+	<h:form id="form">
+		<p:outputLabel value="Codigo:"></p:outputLabel>
+		<p:inputText id="txtCodigo" value="#{testeMB.produto.codigo}"></p:inputText>
+		<p:outputLabel value="Nome:"></p:outputLabel>
+		<p:inputText id="txtNome" value="#{testeMB.produto.nome}"></p:inputText>
+
+		<br />
+		<br />
+
+		<p:commandButton value="Salvar" update="@parent,:tableProdutos"
+			action="#{testeMB.salvar}"></p:commandButton>
+	</h:form>
+
+	<p:dataTable id="tableProdutos" var="produto" value="#{testeMB.produtos}">
+		<p:column headerText="Id">
+			<h:outputText value="#{produto.id}" />
+		</p:column>
+		<p:column headerText="Codigo">
+			<h:outputText value="#{produto.codigo}" />
+		</p:column>
+
+		<p:column headerText="Nome">
+			<h:outputText value="#{produto.nome}" />
+		</p:column>
+
+	</p:dataTable>
+
+</h:body>
+
+</html>
